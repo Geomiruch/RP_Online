@@ -1,0 +1,16 @@
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\bin\Debug\netstandard2.0\RP_App.deps.json
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\bin\Debug\netstandard2.0\RP_App.dll
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\bin\Debug\netstandard2.0\ref\RP_App.dll
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\bin\Debug\netstandard2.0\RP_App.pdb
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.csproj.AssemblyReference.cache
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.AssemblyInfoInputs.cache
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.AssemblyInfo.cs
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.csproj.CoreCompileInputs.cache
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.dll
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\refint\RP_App.dll
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\RP_App.pdb
+C:\Users\popod\source\repos\RP_App\RP_App\RP_App\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
