@@ -31,5 +31,10 @@ namespace RP_App
                 await DisplayAlert("Error", ex.Message, "OK");
             }
         }
+
+        private async void OnRegisterTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegistrationPage());
+        }
     }
 }

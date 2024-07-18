@@ -13,7 +13,5 @@ namespace RP_Server.Requests
 
         [Required]
         public string? Password { get; set; }
-
-        public Role Role { get; set; }
     }
 }
