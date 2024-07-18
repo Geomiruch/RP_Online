@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qYRU8kIn+EO0PdJQwEsOnudskSWGd6dHPTPNGcpmlKrrnVfXPRG/8Idqnc31UzNT99Lc47ft+jur0N4HZlErJw==",
+  "dgSpecHash": "RiKd6LUrheYR0hRmsedS/hg9lkFyVF7Z10U3PJn6FSa9VlE9FtSzdIP6vQhfaxQF83IJLDXLANG1pU4TmbwJjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App.Android\\RP_App.Android.csproj",
+  "projectFilePath": "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App.Android\\RP_App.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\popod\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\popod\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

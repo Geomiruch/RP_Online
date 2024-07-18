@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YibBKHynrKtpr9BxwObrx2fohk07eYGtMF0sIcHQHcX2wszYfKz0AVuaeirTOGYPHq2vybDVCA74IlyE29MAYA==",
+  "dgSpecHash": "03qT12AC3Ldx02G2eY3QkiEHoQETpMDRA/16BYVGNGo8LzsZkfHEKnRof0SUhHq5DHU0QawGXRTUgDcnTzjW4Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App.UWP\\RP_App.UWP.csproj",
+  "projectFilePath": "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App.UWP\\RP_App.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\popod\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.10-rel-29722-00\\microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Users\\popod\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.12\\microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",

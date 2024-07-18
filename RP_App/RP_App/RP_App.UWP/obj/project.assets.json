@@ -11513,11 +11513,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App.UWP\\RP_App.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App.UWP\\RP_App.UWP.csproj",
       "projectName": "RP_App.UWP",
-      "projectPath": "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App.UWP\\RP_App.UWP.csproj",
+      "projectPath": "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App.UWP\\RP_App.UWP.csproj",
       "packagesPath": "C:\\Users\\popod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App.UWP\\obj\\",
+      "outputPath": "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -11539,8 +11539,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App\\RP_App.csproj": {
-              "projectPath": "C:\\Users\\popod\\source\\repos\\RP_App\\RP_App\\RP_App\\RP_App.csproj"
+            "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App\\RP_App.csproj": {
+              "projectPath": "C:\\Users\\popod\\Desktop\\RP_Online\\RP_App\\RP_App\\RP_App\\RP_App.csproj"
             }
           }
         }
@@ -11558,9 +11558,21 @@
             "target": "Package",
             "version": "[6.2.12, )"
           },
+          "Microsoft.NETCore.UniversalWindowsPlatform": {
+            "target": "Package",
+            "version": "[6.2.12, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.0, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.7.0, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[5.0.0.2196, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
