@@ -50,7 +50,7 @@ namespace RP_Server
             builder.Services.AddApiVersioning();
             builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
-            builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=devpass"));
+            builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<TokenService, TokenService>();
 
