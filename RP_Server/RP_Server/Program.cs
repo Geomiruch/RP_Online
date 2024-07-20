@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using RP_Server.Models;
+using RP_Server.Models.Entities;
 using RP_Server.Services;
 using System.Text;
 using System.Text.Json.Serialization;

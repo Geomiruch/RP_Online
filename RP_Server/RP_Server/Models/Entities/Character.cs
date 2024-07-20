@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace RP_Server.Models
+namespace RP_Server.Models.Entities
 {
     public class Character
     {

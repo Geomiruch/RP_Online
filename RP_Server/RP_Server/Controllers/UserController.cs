@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RP_Server.Enums;
-using RP_Server.Models;
+using RP_Server.Models.Entities;
 using RP_Server.Requests;
 using RP_Server.Responses;
 using RP_Server.Services;

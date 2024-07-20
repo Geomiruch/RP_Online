@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RP_Server.DTO;
-using RP_Server.Models;
+using RP_Server.Models.Entities;
 
 namespace RP_Server.Controllers
 {
