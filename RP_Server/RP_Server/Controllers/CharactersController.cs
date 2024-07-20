@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RP_Server.DTO;
 using RP_Server.Models.Entities;
+using RP_Server.Models.Repositories;
+using RP_Server.Services;
 
 namespace RP_Server.Controllers
 {
@@ -12,11 +14,11 @@ namespace RP_Server.Controllers
     [Route("api/[controller]")]
     public class CharactersController : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ICharacterService _characterService;
 
-        public CharactersController(ILogger<CharactersController> logger, ApplicationDbContext dbContext)
+        public CharactersController(ILogger<CharactersController> logger, ICharacterService characterService)
         {
-            _dbContext = dbContext;
+            _characterService = characterService;
         }
 
         [Authorize(Roles = "Admin")]
@@ -28,14 +30,13 @@ namespace RP_Server.Controllers
                 return BadRequest(ModelState);
             }
 
-            var character = new Character
+            var character = new CharacterDto
             {
                 Name = characterDto.Name,
                 OwnerId = characterDto.OwnerId
             };
 
-            _dbContext.Characters.Add(character);
-            await _dbContext.SaveChangesAsync();
+            _characterService.Create(character);
 
             return CreatedAtAction(nameof(GetCharacter), new { id = character.Id }, character);
         }
@@ -44,44 +45,14 @@ namespace RP_Server.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CharacterDto>> GetCharacter(int id)
         {
-            var character = await _dbContext.Characters.FindAsync(id);
-
-            if (character is null)
-            {
-                return NotFound();
-            }
-
-            var characterDto = new CharacterDto
-            {
-                Id = character.Id,
-                Name = character.Name,
-                OwnerId = character.OwnerId,
-            };
-
-            return characterDto;
+            return Ok(_characterService.GetById(id));
         }
 
 
         [HttpGet]
-        public async Task<CharactersDto> ListCharacters()
+        public async Task<ActionResult<CharactersDto>> ListCharacters()
         {
-            var charactersFromDb = await _dbContext.Characters.ToListAsync();
-
-            var charactersDto = new CharactersDto();
-
-            foreach (var character in charactersFromDb)
-            {
-                var characterDto = new CharacterDto
-                {
-                    Id = character.Id,
-                    Name = character.Name,
-                    OwnerId = character.OwnerId
-                };
-
-                charactersDto.Characters.Add(characterDto);
-            }
-
-            return charactersDto;
+            return Ok(_characterService.GetAll());
         }
     }
 }
