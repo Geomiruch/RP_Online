@@ -43,7 +43,7 @@ namespace RP_Server.Controllers
 
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CharacterDto>> GetCharacter(int id)
+        public ActionResult<CharacterDto> GetCharacter(int id)
         {
             return Ok(_characterService.GetById(id));
         }

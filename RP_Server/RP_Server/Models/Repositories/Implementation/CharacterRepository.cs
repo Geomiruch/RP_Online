@@ -19,13 +19,20 @@ namespace RP_Server.Models.Repositories.Implementation
 
         public Character GetById(int id)
         {
-            var result = _dbContext.Characters.FirstOrDefault(c=>c.Id == id);
+            var result = _dbContext.Characters.Include(c => c.Owner).FirstOrDefault(c => c.Id == id);
             if (result == null) { throw new NotFoundException($"Cannot found {nameof(Character)} with Id: {id}"); }
             return result;
         }
         public bool Delete(int id)
         {
-            return _dbContext.Characters.Remove(GetById(id)) != null;
+            var entity = GetById(id);
+            if (entity == null)
+            {
+                return false;
+            }
+
+            _dbContext.Characters.Remove(entity);
+            return _dbContext.SaveChanges() > 0;
         }
         public Character Create(Character customer)
         {
