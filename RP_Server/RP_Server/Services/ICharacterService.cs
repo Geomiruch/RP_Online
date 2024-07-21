@@ -5,7 +5,7 @@ namespace RP_Server.Services
 {
     public interface ICharacterService
     {
-        public ICollection<CharacterDto> GetAll();
+        public CharactersDto GetAll();
         public CharacterDto GetById(int id);
         public bool Delete(int id);
         public CharacterDto Create(CharacterDto request);

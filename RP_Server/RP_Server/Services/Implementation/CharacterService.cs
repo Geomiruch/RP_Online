@@ -18,7 +18,7 @@ namespace RP_Server.Services.Implementation
         public CharactersDto GetAll()
         {
             var result = new CharactersDto();
-            result.Characters = _characterRepository.GetAll().Select(_mapper.Map<CharacterDto>).ToList();
+            result.Characters = _characterRepository.GetAll().Result.Select(_mapper.Map<CharacterDto>).ToList();
             return result;
         }
         public CharacterDto GetById(int id)

@@ -4,7 +4,7 @@ namespace RP_Server.Models.Repositories
 {
     public interface ICharacterRepository
     {
-        public ICollection<Character> GetAll();
+        public Task<ICollection<Character>> GetAll();
         public Character GetById(int id);
         public bool Delete(int id);
         public Character Create(Character customer);

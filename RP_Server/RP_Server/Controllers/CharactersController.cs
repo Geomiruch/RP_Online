@@ -50,7 +50,7 @@ namespace RP_Server.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<CharactersDto>> ListCharacters()
+        public  ActionResult<CharactersDto> ListCharacters()
         {
             return Ok(_characterService.GetAll());
         }
