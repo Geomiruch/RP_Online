@@ -4,7 +4,11 @@
              x:Class="RP_App.MainPage">
 
     <StackLayout>
-        <Label Text="Log in"/>
+        <Label Text="Main page"/>
+        <Button x:Name="ResumeButton" Text="Resume" Clicked="Resume_Button_Clicked"/>
+        <Button x:Name="CharactersButton" Text="Characters" Clicked="Characters_Button_Clicked"/>
+        <Button x:Name="LORButton" Text="LOR" Clicked="LOR_Button_Clicked"/>
+        <Button x:Name="RulesButton" Text="Rules" Clicked="Rules_Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

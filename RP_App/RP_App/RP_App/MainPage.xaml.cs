@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace RP_App
@@ -13,6 +8,23 @@ namespace RP_App
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private async void Resume_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private async void Characters_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private async void LOR_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private async void Rules_Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
