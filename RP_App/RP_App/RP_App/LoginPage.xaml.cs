@@ -24,7 +24,7 @@ namespace RP_App
                 string password = passwordEntry.Text;
                 LoginResponse response = await _authService.SendAuthRequestAsync(email, password);
 
-                await DisplayAlert("Success", $"Login successful! Token: {response.Token}", "OK");
+                await Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)
             {
