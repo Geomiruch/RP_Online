@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RP_App.RegistrationPage">
+    <StackLayout>
+        <Label Text="Register"/>
+        <Entry x:Name="emailEntry"  Placeholder = "Email"/>
+        <Entry x:Name="userName"  Placeholder = "User name"/>
+        <Entry x:Name="passwordEntry"  Placeholder = "Password" IsPassword ="True" />
+        <Entry x:Name="passwordRepeatEntry"  Placeholder = "Confirm password" IsPassword ="True" />
+        <Button Text="Submit" Clicked="Button_Clicked"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Already have an account?"/>
+            <Label Text="Log in">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLogInTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

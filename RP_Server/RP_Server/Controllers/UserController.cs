@@ -41,7 +41,7 @@ namespace RP_Server.Controllers
             if (result.Succeeded)
             {
                 request.Password = "";
-                return CreatedAtAction(nameof(Register), new { email = request.Email, role = request.Role }, request);
+                return CreatedAtAction(nameof(Register), new { email = request.Email}, request);
             }
 
             foreach (var error in result.Errors)
