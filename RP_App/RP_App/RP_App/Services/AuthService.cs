@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using RP_App;
 using RP_App.Contracts.Login;
 
 public class AuthService
@@ -40,7 +41,7 @@ public class AuthService
 
         try
         {
-            var response = await _httpClient.PostAsync("https://192.168.1.104:7128/api/users/login", content);
+            var response = await _httpClient.PostAsync(Constants.ServerURL + Constants.UserEndpoints.LoginEndpoint, content);
 
             if (response.IsSuccessStatusCode)
             {
