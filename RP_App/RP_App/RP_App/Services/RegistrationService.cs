@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using RP_App;
 using RP_App.Contracts.Register;
 
 public class RegistrationService
@@ -39,7 +40,7 @@ public class RegistrationService
 
         try
         {
-            var response = await _httpClient.PostAsync("https://192.168.1.104:7128/api/users/register", content);
+            var response = await _httpClient.PostAsync(Constants.ServerURL + Constants.UserEndpoints.RegisterEndpoint, content);
 
             if (response.IsSuccessStatusCode)
             {
