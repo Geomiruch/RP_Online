@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using RP_Server.Models;
+using RP_Server.Models.Entities;
 using RP_Server.Services;
+using RP_Server.Utilities;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -53,6 +54,8 @@ namespace RP_Server
             builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<TokenService, TokenService>();
+
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
             builder.Services.AddControllers().AddJsonOptions(opt =>
             {

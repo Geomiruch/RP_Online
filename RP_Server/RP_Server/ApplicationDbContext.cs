@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RP_Server.Enums;
-using RP_Server.Models;
+using RP_Server.Models.Entities;
 
 namespace RP_Server
 {
