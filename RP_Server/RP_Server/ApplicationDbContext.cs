@@ -9,6 +9,9 @@ namespace RP_Server
     public class ApplicationDbContext : IdentityUserContext<ApplicationUser>
     {
         public DbSet<Character> Characters => Set<Character>();
+        public DbSet<Group> Groups => Set<Group>();
+        public DbSet<Location> Locations => Set<Location>();
+        public DbSet<Activity> Activities => Set<Activity>();
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -37,6 +40,16 @@ namespace RP_Server
                     Role = Role.Admin
                 }
             );
+
+            modelBuilder.Entity<Character>()
+                .HasDiscriminator<string>("CharacterType")
+                .HasValue<Character>("CharacterBase")
+                .HasValue<HumanoidCharacter>("HumanoidCharacter")
+                .HasValue<PlayerCharacter>("PlayerCharacter");
+
+            modelBuilder.Entity<Character>()
+                .Property<string>("CharacterType")
+                .HasColumnName("CharacterType");
         }
     }
 }

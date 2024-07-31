@@ -13,5 +13,6 @@ namespace RP_Server.Models.Entities
         [ForeignKey("OwnerId")]
         public ApplicationUser Owner { get; set; }
         public bool IsAlive { get; set; }
+        public string Race { get; set; }
     }
 }

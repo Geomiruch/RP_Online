@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RP_Server;
@@ -11,9 +12,10 @@ using RP_Server;
 namespace RP_Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240731145745_PlayingModelsAdded")]
+    partial class PlayingModelsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -186,16 +188,16 @@ namespace RP_Server.Migrations
                         {
                             Id = "80c8b6b1-e2b6-45e8-b044-8f2178a90111",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d53bfa94-7969-4f03-a79a-6c754237e688",
+                            ConcurrencyStamp = "8a2f45d7-0ea3-482c-8ad3-fb1a84cd4bfb",
                             Email = "administrator@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMINISTRATOR@GMAIL.COM",
                             NormalizedUserName = "ADMINISTRATOR@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKJSDhZyATJFi/dvjWluATUd/6TliWCfjqMe79pEm35QtoJqfWw6tM+FhqBLPk1+ww==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI/vy+KXLsmSXmrw4rmobxUyo9WX1GOLwlQUThyIZ43L7phHr4a0zPu4VZC297Yy+Q==",
                             PhoneNumberConfirmed = false,
                             Role = 0,
-                            SecurityStamp = "5145bb5e-f0df-415f-9183-b2af6aaee3e8",
+                            SecurityStamp = "0f8bc034-b82c-4096-9e97-3cb938e5727a",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -211,8 +213,7 @@ namespace RP_Server.Migrations
 
                     b.Property<string>("CharacterType")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("CharacterType");
+                        .HasColumnType("text");
 
                     b.Property<bool>("IsAlive")
                         .HasColumnType("boolean");
