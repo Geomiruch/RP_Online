@@ -1,4 +1,5 @@
 ﻿using RP_Server.DTO;
+using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services
 {
@@ -7,7 +8,7 @@ namespace RP_Server.Services
         public ICollection<ActivityDto> GetAll();
         public ActivityDto GetById(int id);
         public bool Delete(int id);
-        public ActivityDto Create(ActivityDto request);
+        public ActivityDto Create(ActivityCreateRequest request);
         public ActivityDto Update(ActivityDto request);
     }
 }

@@ -2,6 +2,7 @@
 using RP_Server.DTO;
 using RP_Server.Models.Repositories;
 using RP_Server.Models.Entities;
+using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services.Implementation
 {
@@ -24,7 +25,7 @@ namespace RP_Server.Services.Implementation
         public bool Delete(int id)
             => _groupRepository.Delete(id);
 
-        public GroupDto Create(GroupDto request)
+        public GroupDto Create(GroupCreateRequest request)
             => _mapper.Map<GroupDto>(_groupRepository.Create(_mapper.Map<Group>(request)));
 
         public GroupDto Update(GroupDto request)

@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using RP_Server.DTO;
+using RP_Server.Requests.CreateRequsts;
 using RP_Server.Services;
 
 namespace RP_Server.Controllers
@@ -30,7 +31,7 @@ namespace RP_Server.Controllers
             => Ok(_locationService.Delete(id));
 
         [HttpPost("create")]
-        public ActionResult<LocationDto> CreateLocation(LocationDto request)
+        public ActionResult<LocationDto> CreateLocation(LocationCreateRequest request)
             => Ok(_locationService.Create(request));
 
         [HttpPut("update")]

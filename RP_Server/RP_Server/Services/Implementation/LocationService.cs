@@ -2,6 +2,7 @@
 using RP_Server.DTO;
 using RP_Server.Models.Entities;
 using RP_Server.Models.Repositories;
+using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services.Implementation
 {
@@ -25,7 +26,7 @@ namespace RP_Server.Services.Implementation
         public bool Delete(int id)
             => _locationRepository.Delete(id);
 
-        public LocationDto Create(LocationDto request)
+        public LocationDto Create(LocationCreateRequest request)
             => _mapper.Map<LocationDto>(_locationRepository.Create(_mapper.Map<Location>(request)));
 
         public LocationDto Update(LocationDto request)

@@ -2,6 +2,7 @@
 using RP_Server.DTO;
 using RP_Server.Models.Entities;
 using RP_Server.Models.Repositories;
+using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services.Implementation
 {
@@ -29,7 +30,7 @@ namespace RP_Server.Services.Implementation
         {
             return _characterRepository.Delete(id);
         }
-        public CharacterDto Create(CharacterDto request)
+        public CharacterDto Create(CharacterCreateRequeest request)
         {
             var result = _characterRepository.Create(_mapper.Map<Character>(request));
             return _mapper.Map<CharacterDto>(result);

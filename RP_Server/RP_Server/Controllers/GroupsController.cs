@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RP_Server.DTO;
+using RP_Server.Requests.CreateRequsts;
 using RP_Server.Services;
 using RP_Server.Services.Implementation;
 
@@ -32,7 +33,7 @@ namespace RP_Server.Controllers
             => Ok(_groupService.Delete(id));
 
         [HttpPost("create")]
-        public ActionResult<GroupDto> Create(GroupDto request)
+        public ActionResult<GroupDto> Create(GroupCreateRequest request)
             => Ok(_groupService.Create(request));
 
         [HttpPut("update")]

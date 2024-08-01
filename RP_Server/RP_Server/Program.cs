@@ -4,7 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RP_Server.Models.Entities;
+using RP_Server.Models.Repositories;
+using RP_Server.Models.Repositories.Implementation;
 using RP_Server.Services;
+using RP_Server.Services.Implementation;
 using RP_Server.Utilities;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -53,6 +56,15 @@ namespace RP_Server
 
             builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
+            builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+            builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+            builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
+
+            builder.Services.AddScoped<ICharacterService, CharacterService>();
+            builder.Services.AddScoped<IGroupService, GroupService>();
+            builder.Services.AddScoped<ILocationService, LocationService>();
+            builder.Services.AddScoped<IActivityService, ActivityService>();
             builder.Services.AddScoped<TokenService, TokenService>();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfile));

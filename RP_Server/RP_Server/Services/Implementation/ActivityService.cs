@@ -2,6 +2,7 @@
 using RP_Server.DTO;
 using RP_Server.Models.Entities;
 using RP_Server.Models.Repositories;
+using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services.Implementation
 {
@@ -25,7 +26,7 @@ namespace RP_Server.Services.Implementation
         public bool Delete(int id)
             => _activityRepository.Delete(id);
 
-        public ActivityDto Create(ActivityDto request)
+        public ActivityDto Create(ActivityCreateRequest request)
             => _mapper.Map<ActivityDto>(_activityRepository.Create(_mapper.Map<Activity>(request)));
 
         public ActivityDto Update(ActivityDto request)
