@@ -7,7 +7,7 @@ namespace RP_Server.Models.Repositories
         public Task<ICollection<Character>> GetAll();
         public Character GetById(int id);
         public bool Delete(int id);
-        public Character Create(Character customer);
-        public Character Update(Character customer);
+        public Character Create(Character character);
+        public Character Update(Character character);
     }
 }
