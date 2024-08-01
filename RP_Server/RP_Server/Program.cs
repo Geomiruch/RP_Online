@@ -62,6 +62,8 @@ namespace RP_Server
             builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
 
             builder.Services.AddScoped<ICharacterService, CharacterService>();
+            builder.Services.AddScoped<IHumanoidCharacterService, HumanoidCharacterService>();
+            builder.Services.AddScoped<IPlayerCharacterService, PlayerCharacterService>();
             builder.Services.AddScoped<IGroupService, GroupService>();
             builder.Services.AddScoped<ILocationService, LocationService>();
             builder.Services.AddScoped<IActivityService, ActivityService>();
