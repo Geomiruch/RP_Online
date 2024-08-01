@@ -7,8 +7,8 @@ namespace RP_Server.Services.Implementation
 {
     public class ActivityService : IActivityService
     {
-        IActivityRepository _activityRepository;
-        IMapper _mapper;
+        private readonly IActivityRepository _activityRepository;
+        private readonly IMapper _mapper;
 
         public ActivityService(IActivityRepository activityRepository, IMapper mapper)
         {

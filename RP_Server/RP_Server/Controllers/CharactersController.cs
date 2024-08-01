@@ -41,18 +41,13 @@ namespace RP_Server.Controllers
             return CreatedAtAction(nameof(GetCharacter), new { id = character.Id }, character);
         }
 
+        [HttpGet("all")]
+        public ActionResult<CharactersDto> ListCharacters()
+            => Ok(_characterService.GetAll());
 
         [HttpGet("{id:int}")]
         public ActionResult<CharacterDto> GetCharacter(int id)
-        {
-            return Ok(_characterService.GetById(id));
-        }
+            => Ok(_characterService.GetById(id));
 
-
-        [HttpGet]
-        public  ActionResult<CharactersDto> ListCharacters()
-        {
-            return Ok(_characterService.GetAll());
-        }
     }
 }

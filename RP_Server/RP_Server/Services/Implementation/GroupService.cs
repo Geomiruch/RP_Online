@@ -7,8 +7,8 @@ namespace RP_Server.Services.Implementation
 {
     public class GroupService : IGroupService
     {
-        IGroupRepository _groupRepository;
-        IMapper _mapper;
+        private readonly IGroupRepository _groupRepository;
+        private readonly IMapper _mapper;
         public GroupService(IGroupRepository groupRepository, IMapper mapper)
         {
             _groupRepository = groupRepository;

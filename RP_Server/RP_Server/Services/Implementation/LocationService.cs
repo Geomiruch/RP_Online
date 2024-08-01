@@ -7,8 +7,8 @@ namespace RP_Server.Services.Implementation
 {
     public class LocationService : ILocationService
     {
-        ILocationRepository _locationRepository;
-        IMapper _mapper;
+        private readonly ILocationRepository _locationRepository;
+        private readonly IMapper _mapper;
 
         public LocationService(ILocationRepository locationRepository, IMapper mapper)
         {

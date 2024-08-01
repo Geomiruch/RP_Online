@@ -7,8 +7,8 @@ namespace RP_Server.Services.Implementation
 {
     public class CharacterService : ICharacterService
     {
-        ICharacterRepository _characterRepository;
-        IMapper _mapper;
+        private readonly ICharacterRepository _characterRepository;
+        private readonly IMapper _mapper;
         public CharacterService(ICharacterRepository characterRepository, IMapper mapper)
         {
             _characterRepository = characterRepository;
