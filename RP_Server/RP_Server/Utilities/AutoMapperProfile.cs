@@ -9,6 +9,9 @@ namespace RP_Server.Utilities
         public AutoMapperProfile()
         {
             CreateMap<Character, CharacterDto>().ReverseMap();
+            CreateMap<Group, GroupDto>().ReverseMap();
+            CreateMap<Location, LocationDto>().ReverseMap();
+            CreateMap<Activity, ActivityDto>().ReverseMap();
         }
     }
 }
