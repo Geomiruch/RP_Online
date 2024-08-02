@@ -16,15 +16,9 @@ namespace RP_Server.Utilities
             CreateMap<LocationCreateRequest, Location>();
             CreateMap<ActivityCreateRequest, Activity>();
 
-            CreateMap<Character, CharacterDto>()
-                .ForMember(dest => dest.CharacterType, opt => opt.MapFrom(src => src.GetType().Name))
-                .ReverseMap();
-            CreateMap<Character, HumanoidCharacterDto>()
-                .ForMember(dest => dest.CharacterType, opt => opt.MapFrom(src => src.GetType().Name))
-                .ReverseMap();
-            CreateMap<Character, PlayerCharacterDto>()
-                .ForMember(dest => dest.CharacterType, opt => opt.MapFrom(src => src.GetType().Name))
-                .ReverseMap();
+            CreateMap<Character, CharacterDto>().ReverseMap();
+            CreateMap<Character, HumanoidCharacterDto>().ReverseMap();
+            CreateMap<Character, PlayerCharacterDto>().ReverseMap();
 
             CreateMap<Group, GroupDto>().ReverseMap();
             CreateMap<Location, LocationDto>().ReverseMap();

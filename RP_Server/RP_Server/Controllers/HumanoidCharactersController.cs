@@ -27,7 +27,7 @@ namespace RP_Server.Controllers
         public ActionResult<HumanoidCharacterDto> CreateHumanoidCharacter(HumanoidCharacterCreateRequest request)
             => Ok(_humanoidCharacterService.Create(request));
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public ActionResult<HumanoidCharacterDto> UpdateHumanoidCharacter(HumanoidCharacterDto request)
             => Ok(_humanoidCharacterService.Update(request));
     }

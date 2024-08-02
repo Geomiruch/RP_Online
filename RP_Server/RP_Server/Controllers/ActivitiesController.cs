@@ -34,7 +34,7 @@ namespace RP_Server.Controllers
         public ActionResult<ActivityDto> CreateActivity(ActivityCreateRequest request)
             => Ok(_activityService.Create(request));
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public ActionResult<ActivityDto> UpdateActivity(ActivityDto request)
             => Ok(_activityService.Update(request));
     }
