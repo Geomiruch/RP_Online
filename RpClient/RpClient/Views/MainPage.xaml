@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RpClient.Views.MainPage"
+             Title="MainPage"
+             BackgroundImageSource="https://i.imgur.com/rwm1jPE.jpg">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.1, 0.8, 0.9"
+                 WidthRequest="300" 
+                 HeightRequest="600" 
+                 AbsoluteLayout.LayoutFlags="All"
+                 Padding="20"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand"
+                 BackgroundColor="Transparent">
+                <Grid>
+                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
+                    <Button Text="Resume" 
+                            Clicked="Resume_Button_Clicked" 
+                            FontFamily="AppleChancery" 
+                            BackgroundColor="Transparent" 
+                            FontSize="Large" 
+                            FontAttributes="Bold" 
+                            TextColor="Black"
+                            Padding="0,0,0,20"/>
+                </Grid>
+                <Grid>
+                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
+                    <Button Text="Characters" 
+                            Clicked="Characters_Button_Clicked" 
+                            FontFamily="AppleChancery" 
+                            BackgroundColor="Transparent" 
+                            FontSize="Large" 
+                            FontAttributes="Bold" 
+                            TextColor="Black"
+                            Padding="0,0,0,20"/>
+                </Grid>
+                <Grid>
+                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
+                    <Button Text="Lore" 
+                            Clicked="Lore_Button_Clicked" 
+                            FontFamily="AppleChancery" 
+                            BackgroundColor="Transparent" 
+                            FontSize="Large" 
+                            FontAttributes="Bold" 
+                            TextColor="Black"
+                            Padding="0,0,0,20"/>    
+                </Grid>
+                <Grid>
+                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
+                    <Button Text="Rules" 
+                            Clicked="Rules_Button_Clicked" 
+                            FontFamily="AppleChancery" 
+                            BackgroundColor="Transparent" 
+                            FontSize="Large" 
+                            FontAttributes="Bold" 
+                            TextColor="Black"
+                            Padding="0,0,0,20"/>    
+                </Grid>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
