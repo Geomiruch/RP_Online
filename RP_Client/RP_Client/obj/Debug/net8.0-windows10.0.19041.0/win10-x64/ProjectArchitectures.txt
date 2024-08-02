@@ -1,1 +1,0 @@
-C:\Users\popod\source\repos\RP_Client\RP_Client\RP_Client.csproj;x64

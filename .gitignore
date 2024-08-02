@@ -17,3 +17,5 @@ RP_App/RP_App/RP_App.UWP/obj
 RP_Server/RP_Server/bin
 RP_Server/RP_Server/obj
 RP_App/RP_App/RP_App.UWP/bin
+RP_Client/.vs
+RP_Client/RP_Client/obj
