@@ -9,6 +9,7 @@ namespace RP_Server.Models.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? Name { get; set; }
+        public string CharacterType { get; set; }
         public string OwnerId { get; set; }
         [ForeignKey("OwnerId")]
         public ApplicationUser Owner { get; set; }

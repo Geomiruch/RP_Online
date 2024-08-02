@@ -2,13 +2,14 @@
 using RP_Server.DTO;
 using RP_Server.Models.Entities;
 using RP_Server.Models.Repositories;
+using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services.Implementation
 {
     public class CharacterService : ICharacterService
     {
-        ICharacterRepository _characterRepository;
-        IMapper _mapper;
+        private readonly ICharacterRepository _characterRepository;
+        private readonly IMapper _mapper;
         public CharacterService(ICharacterRepository characterRepository, IMapper mapper)
         {
             _characterRepository = characterRepository;
@@ -20,24 +21,18 @@ namespace RP_Server.Services.Implementation
             var result = new CharactersDto();
             result.Characters = _characterRepository.GetAll().Result.Select(_mapper.Map<CharacterDto>).ToList();
             return result;
+            return new CharactersDto().Characters = _characterRepository.GetAll().Result.Select(_mapper.Map<CharacterDto>).ToList();
         }
         public CharacterDto GetById(int id)
-        {
-            return _mapper.Map<CharacterDto>(_characterRepository.GetById(id));
-        }
+            => _mapper.Map<CharacterDto>(_characterRepository.GetById(id));
+
         public bool Delete(int id)
-        {
-            return _characterRepository.Delete(id);
-        }
-        public CharacterDto Create(CharacterDto request)
-        {
-            var result = _characterRepository.Create(_mapper.Map<Character>(request));
-            return _mapper.Map<CharacterDto>(result);
-        }
+            => _characterRepository.Delete(id);
+
+        public CharacterDto Create(CharacterCreateRequeest request)
+            => _mapper.Map<CharacterDto>(_characterRepository.Create(_mapper.Map<Character>(request)));
+
         public CharacterDto Update(CharacterDto request)
-        {
-            var result = _characterRepository.Update(_mapper.Map<Character>(request));
-            return _mapper.Map<CharacterDto>(result);
-        }
+            => _mapper.Map<CharacterDto>(_characterRepository.Update(_mapper.Map<Character>(request)));
     }
 }
