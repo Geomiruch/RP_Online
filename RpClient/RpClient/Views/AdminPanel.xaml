@@ -4,61 +4,76 @@
              x:Class="RpClient.Views.AdminPanel"
              Title="AdminPanel"
              BackgroundImageSource="https://i.imgur.com/rwm1jPE.jpg">
-    <ContentPage.Content>
-        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.1, 0.8, 0.9"
-             WidthRequest="300" 
-             HeightRequest="600" 
-             AbsoluteLayout.LayoutFlags="All"
-             Padding="20"
-             VerticalOptions="CenterAndExpand"
-             HorizontalOptions="CenterAndExpand"
-             BackgroundColor="Transparent">
-                <Grid>
-                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
-                    <Button Text="Entities" 
-                        Clicked="Entities_Button_Clicked" 
-                        FontFamily="AppleChancery" 
-                        BackgroundColor="Transparent" 
-                        FontSize="Large" 
-                        FontAttributes="Bold" 
-                        TextColor="Black"
-                        Padding="0,0,0,20"/>
-                </Grid>
-                <Grid>
-                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
-                    <Button Text="Area"
-                        Clicked="Area_Button_Clicked" 
-                        FontFamily="AppleChancery" 
-                        BackgroundColor="Transparent" 
-                        FontSize="Large" 
-                        FontAttributes="Bold" 
-                        TextColor="Black"
-                        Padding="0,0,0,20"/>
-                </Grid>
-                <Grid>
-                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
-                    <Button Text="Lore" 
-                        Clicked="Lore_Button_Clicked" 
-                        FontFamily="AppleChancery" 
-                        BackgroundColor="Transparent" 
-                        FontSize="Large" 
-                        FontAttributes="Bold" 
-                        TextColor="Black"
-                        Padding="0,0,0,20"/>
-                </Grid>
-                <Grid>
-                    <Image Source="https://i.imgur.com/0zo07jd.png"/>
-                    <Button Text="Rules" 
-                        Clicked="Rules_Button_Clicked" 
-                        FontFamily="AppleChancery" 
-                        BackgroundColor="Transparent" 
-                        FontSize="Large" 
-                        FontAttributes="Bold" 
-                        TextColor="Black"
-                        Padding="0,0,0,20"/>
-                </Grid>
-            </StackLayout>
-        </AbsoluteLayout>
-    </ContentPage.Content>
+    
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand"
+                         WidthRequest="300"
+                         HeightRequest="650"
+                         Spacing="10">
+        <Grid HorizontalOptions="CenterAndExpand"
+              Padding="5">
+            <Image Source="https://i.imgur.com/A5g0sAE.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="Entities" 
+                    Clicked="Entities_Button_Clicked" 
+                    FontFamily="AppleChancery" 
+                    BackgroundColor="Transparent" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    TextColor="Black"
+                    Padding="0,0,0,10"
+                    VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+        <Grid HorizontalOptions="CenterAndExpand"
+              Padding="5">
+            <Image Source="https://i.imgur.com/A5g0sAE.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="Area"
+                    Clicked="Area_Button_Clicked" 
+                    FontFamily="AppleChancery" 
+                    BackgroundColor="Transparent" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    TextColor="Black"
+                    Padding="0,0,0,10"
+                    VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+        <Grid HorizontalOptions="CenterAndExpand"
+              Padding="5">
+            <Image Source="https://i.imgur.com/A5g0sAE.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="Lore" 
+                    Clicked="Lore_Button_Clicked" 
+                    FontFamily="AppleChancery" 
+                    BackgroundColor="Transparent" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    TextColor="Black"
+                    Padding="0,0,0,10"
+                    VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+        <Grid HorizontalOptions="CenterAndExpand"
+              Padding="5">
+            <Image Source="https://i.imgur.com/A5g0sAE.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="Rules" 
+                    Clicked="Rules_Button_Clicked" 
+                    FontFamily="AppleChancery" 
+                    BackgroundColor="Transparent" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    TextColor="Black"
+                    Padding="0,0,0,10"
+                    VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+        <Grid HorizontalOptions="CenterAndExpand"
+              Padding="5">
+            <Image Source="https://i.imgur.com/A5g0sAE.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button Text="Profile" 
+                    Clicked="Profile_Button_Clicked" 
+                    FontFamily="AppleChancery" 
+                    BackgroundColor="Transparent" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    TextColor="Black"
+                    Padding="0,0,0,10"
+                    VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>
