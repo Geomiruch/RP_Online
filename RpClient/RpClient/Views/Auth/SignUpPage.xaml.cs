@@ -4,7 +4,7 @@ namespace RpClient.Views.Auth;
 
 public partial class SignUpPage : ContentPage
 {
-    private readonly AuthService _authService;
+    private AuthService _authService;
 
     public SignUpPage()
 	{

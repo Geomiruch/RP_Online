@@ -9,5 +9,10 @@
             public const string LoginEndpoint = "/users/login";
             public const string RegisterEndpoint = "/users/register";
         }
+
+        public static class CharacterEndpoints
+        {
+            public const string GetAllEndpoint = "/characters/all";
+        }
     }
 }

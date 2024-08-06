@@ -80,5 +80,25 @@ namespace RP_Server.Services
                 SecurityAlgorithms.HmacSha256
             );
         }
+
+        public string GetUserRoleFromToken(string token)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            var roleClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Role);
+
+            return roleClaim?.Value;
+        }
+
+        public string GetUserNameFromToken(string token)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            var nameClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Name);
+
+            return nameClaim?.Value;
+        }
     }
 }

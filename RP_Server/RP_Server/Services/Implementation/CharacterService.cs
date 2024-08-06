@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RP_Server.DTO;
+using RP_Server.DTO.Character;
 using RP_Server.Models.Entities;
 using RP_Server.Models.Repositories;
 using RP_Server.Requests.CreateRequsts;
@@ -10,16 +10,29 @@ namespace RP_Server.Services.Implementation
     {
         private readonly ICharacterRepository _characterRepository;
         private readonly IMapper _mapper;
-        public CharacterService(ICharacterRepository characterRepository, IMapper mapper)
+        private TokenService _tokenService;
+
+        public CharacterService(ICharacterRepository characterRepository, IMapper mapper, TokenService tokenService)
         {
             _characterRepository = characterRepository;
             _mapper = mapper;
+            _tokenService = tokenService;
         }
 
-        public CharactersDto GetAll()
+        public CharactersDto GetAll(string token)
         {
             var result = new CharactersDto();
-            result.Characters = _characterRepository.GetAll().Result.Select(_mapper.Map<CharacterDto>).ToList();
+            if (_tokenService.GetUserRoleFromToken(token) == "Admin")
+            {
+                result.Characters = _characterRepository.GetAll().Result.Select(_mapper.Map<CharacterDto>).ToList();
+            }
+            else
+            {
+                result.Characters = _characterRepository.GetAll().Result
+                    .Where(x=>x.Owner.UserName == _tokenService.GetUserNameFromToken(token))
+                    .Select(_mapper.Map<CharacterDto>)
+                    .ToList();
+            }
             return result;
         }
         public CharacterDto GetById(int id)

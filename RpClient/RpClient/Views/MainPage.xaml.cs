@@ -1,4 +1,5 @@
 using RpClient.Views.Auth;
+using RpClient.Views.Character;
 
 namespace RpClient.Views;
 
@@ -16,7 +17,7 @@ public partial class MainPage : ContentPage
 	}
     private async void Characters_Button_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new CharactersListPage(), true);
     }
     private async void Lore_Button_Clicked(object sender, EventArgs e)
     {

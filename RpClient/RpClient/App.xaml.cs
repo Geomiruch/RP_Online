@@ -6,12 +6,12 @@ namespace RpClient
 {
     public partial class App : Application
     {
-        AuthService _authService;
+        private AuthService _authService;
         public App()
         {
-            _authService = new AuthService();
             InitializeComponent();
-            if (SecureStorage.GetAsync("jwt_token").Result == null)
+            _authService = new AuthService();
+            if (Task.Run(async () => await SecureStorage.Default.GetAsync("jwt_token")).Result == null)
             {
                 MainPage = new NavigationPage(new SignInPage());
             }

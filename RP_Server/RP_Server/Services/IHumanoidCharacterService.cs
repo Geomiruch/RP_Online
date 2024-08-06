@@ -1,4 +1,4 @@
-﻿using RP_Server.DTO;
+﻿using RP_Server.DTO.Character;
 using RP_Server.Requests.CreateRequsts;
 
 namespace RP_Server.Services

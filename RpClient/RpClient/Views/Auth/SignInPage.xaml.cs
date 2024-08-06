@@ -5,8 +5,7 @@ namespace RpClient.Views.Auth;
 
 public partial class SignInPage : ContentPage
 {
-    private readonly AuthService _authService;
-
+    private AuthService _authService;
     public SignInPage()
 	{
 		InitializeComponent();

@@ -1,17 +1,16 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using RP_Server.DTO;
+using RP_Server.DTO.Character;
 using RP_Server.Models.Entities;
-using RP_Server.Models.Repositories;
 using RP_Server.Requests.CreateRequsts;
 using RP_Server.Services;
 
-namespace RP_Server.Controllers
+namespace RP_Server.Controllers.Characters
 {
     [ApiVersion(1.0)]
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class CharactersController : ControllerBase
     {
@@ -22,7 +21,6 @@ namespace RP_Server.Controllers
             _characterService = characterService;
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpPost("new")]
         public async Task<ActionResult<Character>> CreateCharacter(CharacterCreateRequeest request)
         {
@@ -37,8 +35,9 @@ namespace RP_Server.Controllers
         }
 
         [HttpGet("all")]
+        [Produces("application/json")]
         public ActionResult<CharactersDto> ListCharacters()
-            => Ok(_characterService.GetAll());
+            => Ok(_characterService.GetAll(HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "")));
 
         [HttpGet("{id:int}")]
         public ActionResult<CharacterDto> GetCharacter(int id)

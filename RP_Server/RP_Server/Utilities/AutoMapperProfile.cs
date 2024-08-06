@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using RP_Server.DTO;
+using RP_Server.DTO.Character;
 using RP_Server.Models.Entities;
 using RP_Server.Requests.CreateRequsts;
 
@@ -16,7 +17,7 @@ namespace RP_Server.Utilities
             CreateMap<LocationCreateRequest, Location>();
             CreateMap<ActivityCreateRequest, Activity>();
 
-            CreateMap<Character, CharacterDto>().ReverseMap();
+            CreateMap<Character, CharacterDto>().ForMember(dest => dest.Owner, opt => opt.MapFrom(src => src.Owner.UserName)).ReverseMap();
             CreateMap<Character, HumanoidCharacterDto>().ReverseMap();
             CreateMap<Character, PlayerCharacterDto>().ReverseMap();
 

@@ -1,14 +1,16 @@
 ﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using RP_Server.DTO;
+using RP_Server.DTO.Character;
 using RP_Server.Requests.CreateRequsts;
 using RP_Server.Services;
 using RP_Server.Services.Implementation;
 
-namespace RP_Server.Controllers
+namespace RP_Server.Controllers.Characters
 {
     [ApiVersion(1.0)]
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class PlayerCharactersController : ControllerBase
     {

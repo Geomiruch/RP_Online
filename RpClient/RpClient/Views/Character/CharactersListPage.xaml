@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RpClient.Views.Character.CharactersListPage"
+             Title="CharactersListPage"
+             BackgroundImageSource="https://i.imgur.com/rwm1jPE.jpg">
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Characters}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Name}" FontSize="20" />
+                            <Label Text="{Binding CharacterType}" FontSize="16" />
+                            <Label Text="{Binding Owner}" FontSize="16" />
+                            <Label Text="{Binding Race}" FontSize="16" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

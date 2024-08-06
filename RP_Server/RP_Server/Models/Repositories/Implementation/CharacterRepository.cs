@@ -14,7 +14,7 @@ namespace RP_Server.Models.Repositories.Implementation
         }
 
         public async Task<ICollection<Character>> GetAll()
-            => await _dbContext.Characters.ToListAsync();
+            => await _dbContext.Characters.Include(x => x.Owner).ToListAsync();
 
         public Character GetById(int id)
         {

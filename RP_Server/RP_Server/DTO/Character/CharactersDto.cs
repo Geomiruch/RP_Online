@@ -1,4 +1,4 @@
-﻿namespace RP_Server.DTO
+﻿namespace RP_Server.DTO.Character
 {
     public class CharactersDto
     {

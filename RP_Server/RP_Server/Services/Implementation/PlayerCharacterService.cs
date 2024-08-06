@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RP_Server.DTO;
+using RP_Server.DTO.Character;
 using RP_Server.Models.Entities;
 using RP_Server.Models.Repositories;
 using RP_Server.Requests.CreateRequsts;
