@@ -28,9 +28,21 @@ namespace RP_Server.Services
 
             _logger.LogInformation("JWT Token created");
 
-            var temp = tokenHandler.WriteToken(token);
+            return tokenHandler.WriteToken(token);
 
-            return temp;
+        }
+        public string UpdateToken(string oldToken)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadJwtToken(oldToken);
+            var claims = jwtToken.Claims.ToList();
+            var expiration = DateTime.UtcNow.AddMinutes(ExpirationMinutes);
+
+            var newToken = CreateJwtToken(claims, CreateSigningCredentials(), expiration);
+
+            _logger.LogInformation("JWT Token updated");
+
+            return tokenHandler.WriteToken(newToken);
         }
 
         private JwtSecurityToken CreateJwtToken(List<Claim> claims, SigningCredentials credentials,
@@ -99,6 +111,15 @@ namespace RP_Server.Services
             var nameClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Name);
 
             return nameClaim?.Value;
+        }
+        public string GetUserEmailFromToken(string token)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+
+            var emailClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Email);
+
+            return emailClaim?.Value;
         }
     }
 }

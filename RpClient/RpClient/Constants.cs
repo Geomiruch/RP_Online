@@ -8,6 +8,7 @@
         {
             public const string LoginEndpoint = "/users/login";
             public const string RegisterEndpoint = "/users/register";
+            public const string RefreshTokenEndpoint = "/users/refreshToken";
         }
 
         public static class CharacterEndpoints

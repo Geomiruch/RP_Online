@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RP_Server.Enums;
 using RP_Server.Models.Entities;
@@ -41,7 +42,7 @@ namespace RP_Server.Controllers
             if (result.Succeeded)
             {
                 request.Password = "";
-                return CreatedAtAction(nameof(Register), new { email = request.Email}, request);
+                return CreatedAtAction(nameof(Register), new { email = request.Email }, request);
             }
 
             foreach (var error in result.Errors)
@@ -89,6 +90,18 @@ namespace RP_Server.Controllers
                 Email = userInDb.Email,
                 Token = accessToken,
             });
+        }
+        [HttpGet]
+        [Authorize]
+        [Route("refreshToken")]
+        public async Task<ActionResult<AuthResponse>> RefreshToken()
+        {
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault().Split(" ").Last();
+            return new AuthResponse
+            {
+                Email = _tokenService.GetUserEmailFromToken(token),
+                Token = _tokenService.UpdateToken(token),
+            };
         }
     }
 }
